@@ -1263,6 +1263,154 @@
       filter: brightness(1.04);
     }
 
+    /* Transisi Fade Out Kotak Pencapaian & Pentas Animasi Trofi + Teknologi */
+    .sma-pencapaian-body {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .sma-gold-panel.is-celebrating .sma-pencapaian-body {
+      opacity: 0;
+      transform: scale(0.94) translateY(12px);
+      filter: blur(4px);
+      pointer-events: none;
+    }
+
+    @keyframes smaTrophyFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(1.5deg); }
+    }
+
+    @keyframes smaHaloSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes smaTechOrbit {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -48; }
+    }
+
+    @keyframes smaTechPulse {
+      0%, 100% { transform: scale(1); opacity: 0.92; }
+      50% { transform: scale(1.12); opacity: 1; }
+    }
+
+    @keyframes smaStarTwinkle {
+      0%, 100% { transform: scale(0.85); opacity: 0.45; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .sma-rai-stage {
+      position: absolute;
+      inset: 0;
+      z-index: 12;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 22px 16px;
+      opacity: 0;
+      transform: scale(0.90) translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.22s,
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.22s;
+    }
+
+    .sma-gold-panel.is-celebrating .sma-rai-stage {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .sma-trophy-svg {
+      width: 156px;
+      height: 126px;
+      overflow: visible;
+      animation: smaTrophyFloat 3.2s ease-in-out infinite;
+    }
+
+    @media (min-width: 640px) {
+      .sma-trophy-svg {
+        width: 186px;
+        height: 148px;
+      }
+    }
+
+    .sma-halo-ring {
+      transform-origin: 90px 66px;
+      animation: smaHaloSpin 16s linear infinite;
+    }
+
+    .sma-orbit-dash {
+      animation: smaTechOrbit 2.4s linear infinite;
+    }
+
+    .sma-tech-node {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: smaTechPulse 2.2s ease-in-out infinite;
+    }
+
+    .sma-star-spark {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: smaStarTwinkle 1.8s ease-in-out infinite;
+    }
+
+    .sma-thanks-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(27px, 7vw, 40px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #102C40;
+      margin: 8px 0 4px;
+      line-height: 1.08;
+      text-shadow: 0 4px 16px rgba(250, 204, 21, 0.45);
+    }
+
+    .sma-rai-controls {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .sma-rai-back-btn {
+      border: 1px solid rgba(16, 44, 64, 0.22);
+      padding: 8px 15px !important;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.88);
+      color: #102C40 !important;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex !important;
+      align-items: center;
+      gap: 5px;
+      margin: 0 !important;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .sma-rai-back-btn:hover {
+      transform: translateY(-1px);
+      background: #FFFFFF;
+    }
+
     .sma-gold-item {
       margin-top: 14px;
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(254, 249, 195, 0.72) 100%);
@@ -1703,104 +1851,179 @@
           <span class="sma-conf-piece" style="background:#FDE047; --tx1:145px; --ty1:-75px; --tx2:195px; --ty2:180px; --d:0.07s;"></span>
         </div>
 
-        <div style="position:relative; z-index:2;">
-          <div class="sma-sec-header" style="border-bottom-color:rgba(234,179,8,0.42);">
-            <div style="display:flex; align-items:center; gap:14px;">
-              <div style="width:48px; height:48px; border-radius:16px; background:linear-gradient(135deg,#FEF08A 0%,#FACC15 55%,#EAB308 100%); color:#102C40; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid rgba(16,44,64,0.12); box-shadow:0 8px 18px -4px rgba(234,179,8,0.48);">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 9H4.5a2.5 2.5 0 010-5H6M18 9h1.5a2.5 2.5 0 000-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0012 0V2z" />
-                </svg>
-              </div>
-              <div>
-                <div style="font-size:10px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:#102C40;">
-                  03 &mdash; REKOD KECEMERLANGAN EMAS
-                </div>
-                <h3 class="sma-sec-title">Pencapaian &amp; Anugerah</h3>
-              </div>
-            </div>
+        <!-- Pentas Animasi Trofi & Teknologi + Ucapan Terima Kasih Semua -->
+        <div id="smaRaiStage" class="sma-rai-stage" aria-hidden="true">
+          <svg class="sma-trophy-svg" viewBox="0 0 180 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Lingkaran Cahaya & Orbit Teknologi -->
+            <g class="sma-halo-ring">
+              <circle cx="90" cy="66" r="52" stroke="#EAB308" stroke-width="1.4" stroke-dasharray="4 6" opacity="0.65" />
+              <circle cx="90" cy="66" r="42" stroke="#102C40" stroke-width="1.2" stroke-dasharray="2 8" opacity="0.35" />
+            </g>
+            <ellipse class="sma-orbit-dash" cx="90" cy="68" rx="74" ry="26" transform="rotate(-14 90 68)" stroke="#102C40" stroke-width="1.8" stroke-dasharray="7 5" opacity="0.55" />
+            <ellipse class="sma-orbit-dash" cx="90" cy="68" rx="74" ry="26" transform="rotate(14 90 68)" stroke="#0284C7" stroke-width="1.6" stroke-dasharray="5 7" opacity="0.55" />
 
-            <button id="smaCelebrateBtn" type="button" class="sma-rai-btn">
-              <span>&#10024;</span>
-              <span>Rai</span>
+            <!-- Ikon Teknologi Kiri: Cip Pemproses Pintar -->
+            <g class="sma-tech-node">
+              <rect x="14" y="42" width="28" height="28" rx="7" fill="#102C40" stroke="#DBFF00" stroke-width="2" />
+              <rect x="21" y="49" width="14" height="14" rx="3" fill="#DBFF00" />
+              <path d="M24 38v4M32 38v4M24 70v4M32 70v4M10 52h4M10 60h4M42 52h4M42 60h4" stroke="#102C40" stroke-width="2" stroke-linecap="round" />
+            </g>
+
+            <!-- Ikon Teknologi Kanan: Paparan Digital & Kod -->
+            <g class="sma-tech-node" style="animation-delay:0.6s;">
+              <rect x="138" y="42" width="28" height="24" rx="6" fill="#102C40" stroke="#38BDF8" stroke-width="2" />
+              <path d="M148 51l-3 3 3 3M156 51l3 3-3 3" stroke="#DBFF00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M146 71h12M152 66v5" stroke="#102C40" stroke-width="2" stroke-linecap="round" />
+            </g>
+
+            <!-- Trofi Emas Utama di Tengah -->
+            <defs>
+              <linearGradient id="smaGoldTrophy" x1="62" y1="24" x2="118" y2="105" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FEF9C3" />
+                <stop offset="45%" stop-color="#FACC15" />
+                <stop offset="100%" stop-color="#CA8A04" />
+              </linearGradient>
+            </defs>
+            <!-- Pemegang Kiri & Kanan Trofi -->
+            <path d="M64 36H52c-3.5 0-6 2.8-6 6.5 0 11 7.5 19.5 18 21.5" stroke="#EAB308" stroke-width="4.5" stroke-linecap="round" />
+            <path d="M116 36h12c3.5 0 6 2.8 6 6.5 0 11-7.5 19.5-18 21.5" stroke="#EAB308" stroke-width="4.5" stroke-linecap="round" />
+            <!-- Badan Piala -->
+            <path d="M64 28h52v25c0 15.5-11.6 28-26 28S64 68.5 64 53V28z" fill="url(#smaGoldTrophy)" stroke="#102C40" stroke-width="2.2" />
+            <!-- Kilauan Piala -->
+            <path d="M72 34v18c0 8.5 4.5 15.5 11 19" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" opacity="0.75" />
+            <!-- Bintang Tengah Trofi -->
+            <polygon points="90,38 93.2,44.6 100.5,45.6 95.2,50.7 96.5,58 90,54.5 83.5,58 84.8,50.7 79.5,45.6 86.8,44.6" fill="#102C40" />
+            <!-- Batang & Tapak Trofi -->
+            <rect x="84" y="81" width="12" height="18" fill="url(#smaGoldTrophy)" stroke="#102C40" stroke-width="2" />
+            <rect x="68" y="99" width="44" height="9" rx="4" fill="#102C40" />
+            <rect x="62" y="108" width="56" height="12" rx="4" fill="#102C40" stroke="#FACC15" stroke-width="1.8" />
+            <rect x="76" y="112" width="28" height="4" rx="2" fill="#DBFF00" />
+
+            <!-- Bintang Kilauan Warna-Warni -->
+            <circle class="sma-star-spark" cx="50" cy="24" r="3.5" fill="#F43F5E" />
+            <circle class="sma-star-spark" cx="132" cy="22" r="3.5" fill="#38BDF8" style="animation-delay:0.4s;" />
+            <circle class="sma-star-spark" cx="144" cy="88" r="3" fill="#10B981" style="animation-delay:0.8s;" />
+            <circle class="sma-star-spark" cx="36" cy="88" r="3" fill="#A855F7" style="animation-delay:1.1s;" />
+          </svg>
+
+          <span style="padding:3px 12px; border-radius:9999px; background:#102C40; color:#DBFF00; font-size:9.5px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase;">
+            Inovasi &amp; Teknologi Pendidikan
+          </span>
+          <h4 class="sma-thanks-title">Terima Kasih Semua!</h4>
+          <p style="margin:0; max-width:340px; font-size:12px; font-weight:600; color:rgba(16,44,64,0.82); line-height:1.45;">
+            Atas sokongan, bimbingan dan semangat dalam menjayakan pencapaian serta inovasi teknologi.
+          </p>
+
+          <div class="sma-rai-controls">
+            <button id="smaRaiReplayBtn" type="button" class="sma-rai-btn">
+              <span>&#127881;</span>
+              <span>Rai Lagi</span>
             </button>
-          </div>
-
-          <!-- Pencapaian 1 -->
-          <div class="sma-gold-item" data-sma-sound="soft">
-            <div style="width:44px; height:44px; border-radius:14px; background:linear-gradient(135deg,#FEF08A 0%,#FACC15 55%,#EAB308 100%); color:#102C40; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid rgba(16,44,64,0.10);">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <circle cx="12" cy="15" r="6" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.21 9.89L5 3h4l3 5.5L15 3h4l-3.21 6.89" />
-              </svg>
-            </div>
-            <div style="flex:1;">
-              <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px;">
-                <span style="padding:2px 10px; border-radius:9999px; background:linear-gradient(90deg,#FDE047,#FACC15); color:#102C40; font-size:9px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase;">
-                  Anugerah Perak
-                </span>
-                <span style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#102C40; opacity:0.78;">
-                  INOVASI &bull; PEDATED
-                </span>
-              </div>
-              <div style="margin-top:8px; font-size:14.5px; font-weight:800; text-transform:uppercase; color:#102C40; line-height:1.35;">
-                Pertandingan Inovasi Peringkat Afzan (PEDATED)
-              </div>
-            </div>
-          </div>
-
-          <!-- Pencapaian 2 -->
-          <div class="sma-gold-item" data-sma-sound="soft">
-            <div style="width:44px; height:44px; border-radius:14px; background:#102C40; border:1.5px solid #FACC15; color:#FDE047; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
-              </svg>
-            </div>
-            <div style="flex:1;">
-              <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px;">
-                <span style="padding:2px 10px; border-radius:9999px; background:#102C40; color:#FDE047; border:1px solid #FACC15; font-size:9px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase;">
-                  Peringkat Kebangsaan &bull; 2022
-                </span>
-                <span style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#102C40; opacity:0.78;">
-                  EDUTECH &bull; DIGITAL
-                </span>
-              </div>
-              <div style="margin-top:8px; font-size:14.5px; font-weight:800; text-transform:uppercase; color:#102C40; line-height:1.35;">
-                Saguhati Pertandingan Minecraft Edu Challenge Peringkat Kebangsaan Tahun 2022
-              </div>
-            </div>
-          </div>
-
-          <!-- Pencapaian 3 (Baharu: Pencapaian Digital Advance dalam Tapir Hero) -->
-          <div class="sma-gold-item" data-sma-sound="soft">
-            <div style="width:44px; height:44px; border-radius:14px; background:linear-gradient(135deg,#FEF08A 0%,#FACC15 55%,#EAB308 100%); color:#102C40; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid rgba(16,44,64,0.10);">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <div style="flex:1;">
-              <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px;">
-                <span style="padding:2px 10px; border-radius:9999px; background:linear-gradient(90deg,#FEF08A,#FACC15); color:#102C40; font-size:9px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase;">
-                  Digital Advance
-                </span>
-                <span style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#102C40; opacity:0.78;">
-                  TAPIR HERO &bull; DIGITAL
-                </span>
-              </div>
-              <div style="margin-top:8px; font-size:14.5px; font-weight:800; text-transform:uppercase; color:#102C40; line-height:1.35;">
-                Pencapaian Digital Advance dalam Tapir Hero
-              </div>
-            </div>
+            <button id="smaRaiBackBtn" type="button" class="sma-rai-back-btn">
+              <span>&larr;</span>
+              <span>Lihat Pencapaian</span>
+            </button>
           </div>
         </div>
 
-        <div style="position:relative; z-index:2; margin-top:24px; padding-top:15px; border-top:1px solid rgba(234,179,8,0.42); display:flex; align-items:center; justify-content:space-between; font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#102C40;">
-          <span>Inovasi &amp; Teknologi Pendidikan</span>
-          <span style="color:#102C40; font-weight:800; display:flex; align-items:baseline; gap:4px;">
-            <span class="sma-font-lockscreen" style="font-size:18px; font-weight:900; line-height:1;">03</span>
-            <span>Anugerah Utama</span>
-          </span>
+        <div class="sma-pencapaian-body">
+          <div style="position:relative; z-index:2;">
+            <div class="sma-sec-header" style="border-bottom-color:rgba(234,179,8,0.42);">
+              <div style="display:flex; align-items:center; gap:14px;">
+                <div class="sma-sec-icon" style="background:linear-gradient(135deg,#FEF08A 0%,#FACC15 55%,#EAB308 100%); color:#102C40; border:1px solid rgba(16,44,64,0.14);">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4M7 4h10v6a5 5 0 01-10 0V4z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 6H4a1 1 0 00-1 1v1a3 3 0 003 3h1M17 6h3a1 1 0 011 1v1a3 3 0 01-3 3h-1" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="sma-sec-kicker" style="color:rgba(16,44,64,0.68);">03 &mdash; KECEMERLANGAN</div>
+                  <h3 class="sma-sec-title">Pencapaian &amp; Anugerah</h3>
+                </div>
+              </div>
+
+              <button id="smaCelebrateBtn" type="button" class="sma-rai-btn">
+                <span>&#10024;</span>
+                <span>Rai</span>
+              </button>
+            </div>
+
+            <!-- Pencapaian 1 -->
+            <div class="sma-gold-item" data-sma-sound="soft">
+              <div style="width:44px; height:44px; border-radius:14px; background:#102C40; color:#DBFF00; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 15l-3.5 2 .9-3.9L6 10.3l4-.3L12 6.3l2 3.7 4 .3-3.4 2.8.9 3.9z" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </div>
+              <div style="flex:1;">
+                <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px;">
+                  <span style="padding:2px 10px; border-radius:9999px; background:#102C40; color:#DBFF00; font-size:9px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase;">
+                    Al-Quran &amp; Tahfiz
+                  </span>
+                  <span style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#102C40; opacity:0.78;">
+                    MAAHAD TAHFIZ
+                  </span>
+                </div>
+                <div style="margin-top:8px; font-size:14.5px; font-weight:800; text-transform:uppercase; color:#102C40; line-height:1.35;">
+                  Khatam Hafazan Al-Quran &amp; Kecemerlangan Sahsiah
+                </div>
+              </div>
+            </div>
+
+            <!-- Pencapaian 2 -->
+            <div class="sma-gold-item" data-sma-sound="soft">
+              <div style="width:44px; height:44px; border-radius:14px; background:rgba(16,44,64,0.10); color:#102C40; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+                  <rect x="3" y="4" width="18" height="14" rx="2" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 18v3M9 10l2 2 4-4" />
+                </svg>
+              </div>
+              <div style="flex:1;">
+                <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px;">
+                  <span style="padding:2px 10px; border-radius:9999px; background:rgba(16,44,64,0.12); color:#102C40; font-size:9px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase;">
+                    Inovasi PdP
+                  </span>
+                  <span style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#102C40; opacity:0.78;">
+                    EDUP 6023 &bull; IPG
+                  </span>
+                </div>
+                <div style="margin-top:8px; font-size:14.5px; font-weight:800; text-transform:uppercase; color:#102C40; line-height:1.35;">
+                  Pembangunan Bahan Bantu Mengajar Digital Interaktif
+                </div>
+              </div>
+            </div>
+
+            <!-- Pencapaian 3 (Baharu: Pencapaian Digital Advance dalam Tapir Hero) -->
+            <div class="sma-gold-item" data-sma-sound="soft">
+              <div style="width:44px; height:44px; border-radius:14px; background:linear-gradient(135deg,#FEF08A 0%,#FACC15 55%,#EAB308 100%); color:#102C40; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid rgba(16,44,64,0.10);">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <div style="flex:1;">
+                <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px;">
+                  <span style="padding:2px 10px; border-radius:9999px; background:linear-gradient(90deg,#FEF08A,#FACC15); color:#102C40; font-size:9px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase;">
+                    Digital Advance
+                  </span>
+                  <span style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#102C40; opacity:0.78;">
+                    TAPIR HERO &bull; DIGITAL
+                  </span>
+                </div>
+                <div style="margin-top:8px; font-size:14.5px; font-weight:800; text-transform:uppercase; color:#102C40; line-height:1.35;">
+                  Pencapaian Digital Advance dalam Tapir Hero
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="position:relative; z-index:2; margin-top:24px; padding-top:15px; border-top:1px solid rgba(234,179,8,0.42); display:flex; align-items:center; justify-content:space-between; font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#102C40;">
+            <span>Inovasi &amp; Teknologi Pendidikan</span>
+            <span style="color:#102C40; font-weight:800; display:flex; align-items:baseline; gap:4px;">
+              <span class="sma-font-lockscreen" style="font-size:18px; font-weight:900; line-height:1;">03</span>
+              <span>Anugerah Utama</span>
+            </span>
+          </div>
         </div>
       </section>
     </div>
@@ -2181,78 +2404,56 @@
       },
 
       // Arpeggio Kecemerlangan Emas yang Merdu
-      celebrate() {
+      celebrate(grand = false) {
         if (!this.enabled) return;
         this.runImmediate((ctx) => {
           const now = ctx.currentTime;
-          if (now - this.lastCelebrate < 0.22) return;
+          if (!grand && now - this.lastCelebrate < 0.22) return;
           this.lastCelebrate = now;
 
-          [261.63, 329.63, 392.00, 493.88, 587.33].forEach((f, i) => {
+          const notes = grand
+            ? [261.63, 329.63, 392.00, 493.88, 523.25, 659.25, 783.99, 1046.50]
+            : [261.63, 329.63, 392.00, 493.88, 587.33];
+
+          notes.forEach((f, i) => {
             const osc = ctx.createOscillator();
             const gain = ctx.createGain();
-            osc.type = "sine";
+            osc.type = i % 2 === 0 ? "triangle" : "sine";
             osc.frequency.setValueAtTime(f, now + i * 0.055);
 
             gain.gain.setValueAtTime(0.0001, now + i * 0.055);
-            gain.gain.linearRampToValueAtTime(0.055, now + i * 0.055 + 0.03);
-            gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.055 + 0.72);
+            gain.gain.linearRampToValueAtTime(grand ? 0.068 : 0.055, now + i * 0.055 + 0.03);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.055 + (grand ? 0.92 : 0.72));
 
             osc.connect(gain);
             gain.connect(this.masterFilter);
             osc.start(now + i * 0.055);
-            osc.stop(now + i * 0.055 + 0.76);
+            osc.stop(now + i * 0.055 + (grand ? 0.96 : 0.76));
           });
-          pulseVisualizer(380);
+          pulseVisualizer(grand ? 580 : 380);
         });
       }
     };
 
-    // Buka kunci AudioContext seawal mungkin (on load, hover pertama, pergerakan tetikus, atau sentuhan)
-    AudioFX.initContext();
-    AudioFX.unlock();
-
-    const unlockEvents = [
-      "pointerover", "mouseover", "pointerenter",
-      "pointermove", "mousemove",
-      "pointerdown", "mousedown",
-      "touchstart", "touchmove",
-      "keydown", "scroll", "wheel", "focus"
-    ];
-
-    function handleAutoUnlock() {
-      const ctx = AudioFX.unlock();
-      if (ctx && ctx.state === "running") {
-        removeUnlockListeners();
-      }
+    function handleGlobalUnlock() {
+      AudioFX.unlock();
     }
 
     function removeUnlockListeners() {
-      unlockEvents.forEach(ev => window.removeEventListener(ev, handleAutoUnlock, true));
+      ["pointerdown", "touchstart", "keydown"].forEach((evt) => {
+        window.removeEventListener(evt, handleGlobalUnlock);
+      });
     }
 
-    unlockEvents.forEach(ev => {
-      window.addEventListener(ev, handleAutoUnlock, { capture: true, passive: true });
+    ["pointerdown", "touchstart", "keydown"].forEach((evt) => {
+      window.addEventListener(evt, handleGlobalUnlock, { passive: true });
     });
-    window.addEventListener("DOMContentLoaded", handleAutoUnlock, { passive: true });
-    window.addEventListener("load", handleAutoUnlock, { passive: true });
 
-    // Pasang bunyi HOVER (pointerenter/mouseover) & TOUCH pada SEMUA butang, pautan & kad interaktif
     root.querySelectorAll("[data-sma-sound]").forEach((el) => {
-      const soundType = el.getAttribute("data-sma-sound");
-      const triggerElSound = () => {
-        if (soundType === "page") AudioFX.pageFlip();
-        else AudioFX.buttonTap();
-      };
-      el.addEventListener("pointerenter", triggerElSound, { passive: true });
-      el.addEventListener("touchstart", triggerElSound, { passive: true });
+      el.addEventListener("pointerenter", () => AudioFX.buttonTap(), { passive: true });
     });
 
-    if (sfxBtn) {
-      sfxBtn.addEventListener("pointerenter", () => {
-        if (AudioFX.enabled) AudioFX.buttonTap();
-      }, { passive: true });
-
+    if (sfxBtn && sfxLabel) {
       sfxBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         const on = AudioFX.toggle();
@@ -2826,6 +3027,9 @@
     const goldPanel = document.getElementById("sma-pencapaian");
     const confettiCanvas = document.getElementById("smaConfettiCanvas");
     const celebrateBtn = document.getElementById("smaCelebrateBtn");
+    const raiStage = document.getElementById("smaRaiStage");
+    const raiReplayBtn = document.getElementById("smaRaiReplayBtn");
+    const raiBackBtn = document.getElementById("smaRaiBackBtn");
 
     if (goldPanel && confettiCanvas) {
       const ctxConf = confettiCanvas.getContext("2d");
@@ -2845,18 +3049,21 @@
       }
       resizeConfetti();
 
-      function burstGoldConfetti(playSound = true) {
-        if (playSound) AudioFX.celebrate();
+      function burstGoldConfetti(playSound = true, colorful = false) {
+        if (playSound) AudioFX.celebrate(colorful);
         const rect = goldPanel.getBoundingClientRect();
-        const colors = ["#FEF08A", "#FDE047", "#FACC15", "#EAB308", "#DBFF00"];
+        const colors = colorful
+          ? ["#FACC15", "#DBFF00", "#38BDF8", "#F43F5E", "#10B981", "#A855F7", "#FB923C", "#FDE047"]
+          : ["#FEF08A", "#FDE047", "#FACC15", "#EAB308", "#DBFF00"];
 
-        for (let i = 0; i < 65; i++) {
+        const count = colorful ? 95 : 65;
+        for (let i = 0; i < count; i++) {
           particles.push({
-            x: rect.width * (0.2 + Math.random() * 0.6),
-            y: rect.height * 0.34,
-            vx: (Math.random() - 0.5) * 9,
-            vy: -Math.random() * 7 - 2,
-            size: Math.random() * 7 + 4,
+            x: rect.width * (0.15 + Math.random() * 0.7),
+            y: rect.height * (colorful ? 0.42 : 0.34),
+            vx: (Math.random() - 0.5) * (colorful ? 11.5 : 9),
+            vy: -Math.random() * (colorful ? 8.5 : 7) - 2,
+            size: Math.random() * 7.5 + 4,
             color: colors[Math.floor(Math.random() * colors.length)],
             rot: Math.random() * Math.PI * 2,
             rotSpd: (Math.random() - 0.5) * 0.25,
@@ -2898,23 +3105,51 @@
         }
       }
 
+      function startGrandCelebration() {
+        goldPanel.classList.add("is-celebrating");
+        if (raiStage) raiStage.setAttribute("aria-hidden", "false");
+        burstGoldConfetti(true, true);
+        setTimeout(() => burstGoldConfetti(false, true), 280);
+        setTimeout(() => burstGoldConfetti(false, true), 620);
+      }
+
       if (celebrateBtn) {
         celebrateBtn.addEventListener("pointerenter", () => {
-          burstGoldConfetti(true);
-        }, { passive: true });
-
-        celebrateBtn.addEventListener("touchstart", () => {
-          burstGoldConfetti(true);
+          if (!goldPanel.classList.contains("is-celebrating")) {
+            burstGoldConfetti(true, false);
+          }
         }, { passive: true });
 
         celebrateBtn.addEventListener("click", (e) => {
           e.preventDefault();
-          burstGoldConfetti(true);
+          e.stopPropagation();
+          startGrandCelebration();
+        });
+      }
+
+      if (raiReplayBtn) {
+        raiReplayBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          burstGoldConfetti(true, true);
+          setTimeout(() => burstGoldConfetti(false, true), 260);
+        });
+      }
+
+      if (raiBackBtn) {
+        raiBackBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          AudioFX.buttonTap();
+          goldPanel.classList.remove("is-celebrating");
+          if (raiStage) raiStage.setAttribute("aria-hidden", "true");
         });
       }
 
       goldPanel.addEventListener("pointerenter", () => {
-        if (particles.length < 15) burstGoldConfetti(true);
+        if (!goldPanel.classList.contains("is-celebrating") && particles.length < 15) {
+          burstGoldConfetti(true, false);
+        }
       }, { passive: true });
 
       if (typeof IntersectionObserver !== "undefined") {
@@ -2923,7 +3158,7 @@
           entries.forEach(ent => {
             if (ent.isIntersecting && !triggered) {
               triggered = true;
-              burstGoldConfetti(false);
+              burstGoldConfetti(false, false);
             }
           });
         }, { threshold: 0.35 });
