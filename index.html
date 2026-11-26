@@ -20,7 +20,7 @@
     }
 
     body {
-      padding: 12px;
+      padding: 8px;
     }
 
     @media (min-width: 640px) {
@@ -55,8 +55,8 @@
       color: #102C40;
       position: relative;
       overflow: hidden;
-      border-radius: 28px;
-      padding: 20px 16px 32px;
+      border-radius: 22px;
+      padding: 14px 12px 24px;
       width: 100%;
       max-width: 1320px;
       margin: 0 auto;
@@ -65,6 +65,7 @@
 
     @media (min-width: 640px) {
       .sma-jf-root {
+        border-radius: 28px;
         padding: 24px 36px 40px;
       }
     }
@@ -126,42 +127,79 @@
         inset 0 1px 0 0 rgba(255, 255, 255, 0.98),
         0 14px 34px -12px rgba(16, 44, 64, 0.12);
       border-radius: 9999px;
-      padding: 10px 18px;
+      padding: 7px 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 6px;
+      max-width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .sma-nav {
+        padding: 10px 18px;
+        gap: 12px;
+      }
     }
 
     .sma-brand {
       display: flex;
       align-items: center;
-      gap: 11px;
+      gap: 7px;
       text-decoration: none;
+      min-width: 0;
+      flex-shrink: 1;
+    }
+
+    @media (min-width: 640px) {
+      .sma-brand {
+        gap: 11px;
+        flex-shrink: 0;
+      }
     }
 
     .sma-brand-badge {
-      width: 34px;
-      height: 34px;
+      width: 28px;
+      height: 28px;
       border-radius: 9999px;
       background: linear-gradient(145deg, #102C40, #1A4360);
       color: #DBFF00;
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
       box-shadow: 0 4px 12px rgba(16, 44, 64, 0.22);
     }
 
+    @media (min-width: 640px) {
+      .sma-brand-badge {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+        letter-spacing: 0.07em;
+      }
+    }
+
     .sma-brand-name {
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
       color: #102C40;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (min-width: 640px) {
+      .sma-brand-name {
+        font-size: 12px;
+        letter-spacing: 0.16em;
+      }
     }
 
     .sma-nav-links {
@@ -213,26 +251,44 @@
     .sma-nav-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 640px) {
+      .sma-nav-actions {
+        gap: 8px;
+      }
     }
 
     /* Penunjuk Audio Harmonik dengan Gelombang Animasi */
     .sma-sfx-btn {
       display: none;
       align-items: center;
-      gap: 7px;
-      padding: 7px 14px;
+      gap: 5px;
+      padding: 6px 9px;
       border-radius: 9999px;
       border: 1px solid rgba(16, 44, 64, 0.14);
       background: rgba(255, 255, 255, 0.88);
       color: #102C40;
       font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
+      font-size: 8.5px;
       font-weight: 800;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @media (min-width: 640px) {
+      .sma-sfx-btn {
+        gap: 7px;
+        padding: 7px 14px;
+        font-size: 10px;
+        letter-spacing: 0.13em;
+      }
     }
 
     .sma-js-ready .sma-sfx-btn {
@@ -270,20 +326,31 @@
     }
 
     .sma-nav-cta {
-      padding: 8px 18px;
+      padding: 6px 11px;
       border-radius: 9999px;
       background: #102C40;
       color: #F7FAFC !important;
-      font-size: 11px;
+      font-size: 9.5px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
       box-shadow: 0 6px 16px -4px rgba(16, 44, 64, 0.28);
       transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s ease;
+    }
+
+    @media (min-width: 640px) {
+      .sma-nav-cta {
+        padding: 8px 18px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        gap: 6px;
+      }
     }
 
     .sma-nav-cta:hover {
@@ -306,7 +373,7 @@
 
     .sma-clock-pill {
       position: absolute;
-      top: 16px;
+      top: 10px;
       left: 0;
       z-index: 25;
       background: rgba(255, 255, 255, 0.80);
@@ -316,20 +383,36 @@
       box-shadow:
         inset 0 1px 0 0 rgba(255, 255, 255, 0.98),
         0 14px 30px -8px rgba(16, 44, 64, 0.12);
-      border-radius: 20px;
-      padding: 11px 16px;
+      border-radius: 16px;
+      padding: 8px 12px;
       pointer-events: none;
+    }
+
+    @media (min-width: 640px) {
+      .sma-clock-pill {
+        top: 16px;
+        border-radius: 20px;
+        padding: 11px 16px;
+      }
     }
 
     .sma-clock-top {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 9px;
+      gap: 5px;
+      font-size: 8px;
       font-weight: 800;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: rgba(16, 44, 64, 0.65);
+    }
+
+    @media (min-width: 640px) {
+      .sma-clock-top {
+        gap: 6px;
+        font-size: 9px;
+        letter-spacing: 0.15em;
+      }
     }
 
     .sma-dot-lime {
@@ -343,17 +426,24 @@
     }
 
     .sma-clock-main {
-      margin-top: 3px;
+      margin-top: 2px;
       display: flex;
       align-items: baseline;
-      gap: 3px;
+      gap: 2px;
       color: #102C40;
       line-height: 1;
     }
 
+    @media (min-width: 640px) {
+      .sma-clock-main {
+        margin-top: 3px;
+        gap: 3px;
+      }
+    }
+
     .sma-clock-digits {
       font-family: 'Big Shoulders Display', sans-serif;
-      font-size: 42px;
+      font-size: 30px;
       font-weight: 900;
       line-height: 0.95;
     }
@@ -366,35 +456,59 @@
 
     .sma-clock-colon {
       font-family: 'Big Shoulders Display', sans-serif;
-      font-size: 38px;
+      font-size: 27px;
       font-weight: 900;
       color: rgba(16, 44, 64, 0.72);
       animation: smaColonBlink 1.2s ease-in-out infinite;
+    }
+
+    @media (min-width: 640px) {
+      .sma-clock-colon {
+        font-size: 38px;
+      }
     }
 
     .sma-sec-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 22px;
+      height: 18px;
       background: #102C40;
       color: #DBFF00;
-      border-radius: 7px;
-      padding: 0 6px;
-      margin-left: 4px;
+      border-radius: 6px;
+      padding: 0 5px;
+      margin-left: 3px;
       align-self: center;
       font-family: 'Big Shoulders Display', sans-serif;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 800;
     }
 
+    @media (min-width: 640px) {
+      .sma-sec-badge {
+        height: 22px;
+        border-radius: 7px;
+        padding: 0 6px;
+        margin-left: 4px;
+        font-size: 15px;
+      }
+    }
+
     .sma-clock-tz {
-      margin-top: 5px;
-      font-size: 8.5px;
+      margin-top: 4px;
+      font-size: 7.5px;
       font-weight: 800;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       color: rgba(16, 44, 64, 0.56);
+    }
+
+    @media (min-width: 640px) {
+      .sma-clock-tz {
+        margin-top: 5px;
+        font-size: 8.5px;
+        letter-spacing: 0.16em;
+      }
     }
 
     /* =========================================================
@@ -404,18 +518,26 @@
       position: relative;
       z-index: 10;
       width: 100%;
-      height: 500px;
-      margin-top: 8px;
-      margin-bottom: 26px;
+      height: 430px;
+      margin-top: 6px;
+      margin-bottom: 18px;
       display: flex;
       align-items: flex-end;
       justify-content: center;
       background: transparent;
     }
 
+    @media (min-width: 420px) {
+      .sma-hero {
+        height: 470px;
+      }
+    }
+
     @media (min-width: 640px) {
       .sma-hero {
         height: 610px;
+        margin-top: 8px;
+        margin-bottom: 26px;
       }
     }
 
@@ -506,13 +628,14 @@
     }
 
     .sma-bg-subtop {
-      font-size: 9px;
+      font-size: 7.5px;
       font-weight: 800;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 10px;
-      padding: 5px 16px;
+      margin-bottom: 8px;
+      padding: 4px 12px;
       border-radius: 9999px;
+      max-width: 92%;
       background: rgba(255, 255, 255, 0.68);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -522,29 +645,34 @@
     @media (min-width: 640px) {
       .sma-bg-subtop {
         font-size: 11px;
+        letter-spacing: 0.28em;
+        margin-bottom: 10px;
+        padding: 5px 16px;
       }
     }
 
     .sma-bg-main {
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
-      font-size: clamp(38px, 8.4vw, 120px);
-      line-height: 0.92;
+      font-size: clamp(24px, 8.2vw, 120px);
+      line-height: 0.94;
       text-transform: uppercase;
       letter-spacing: 0.02em;
     }
 
     .sma-bg-subbot {
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 800;
-      letter-spacing: 0.34em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     @media (min-width: 640px) {
       .sma-bg-subbot {
         font-size: 13px;
+        letter-spacing: 0.34em;
+        margin-top: 12px;
       }
     }
 
@@ -585,18 +713,25 @@
     /* Kawalan Bawah Kiri: Show Aura */
     .sma-aura-bar {
       position: absolute;
-      bottom: 14px;
+      bottom: 10px;
       left: 0;
       z-index: 25;
+      max-width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .sma-aura-bar {
+        bottom: 14px;
+      }
     }
 
     .sma-aura-btn {
       display: inline-flex !important;
       align-items: center;
-      gap: 11px;
-      padding: 8px 18px 8px 10px !important;
+      gap: 9px;
+      padding: 6px 14px 6px 8px !important;
       border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.84);
+      background: rgba(255, 255, 255, 0.86);
       backdrop-filter: blur(22px) saturate(185%);
       -webkit-backdrop-filter: blur(22px) saturate(185%);
       border: 1px solid rgba(16, 44, 64, 0.14);
@@ -608,6 +743,13 @@
       transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease, box-shadow 0.28s ease;
     }
 
+    @media (min-width: 640px) {
+      .sma-aura-btn {
+        gap: 11px;
+        padding: 8px 18px 8px 10px !important;
+      }
+    }
+
     .sma-aura-btn:hover {
       transform: translateY(-2px);
       border-color: rgba(16, 44, 64, 0.30);
@@ -617,15 +759,23 @@
     }
 
     .sma-aura-icon {
-      width: 34px;
-      height: 34px;
+      width: 28px;
+      height: 28px;
       border-radius: 9999px;
       background: #102C40;
       color: #DBFF00;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
       transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @media (min-width: 640px) {
+      .sma-aura-icon {
+        width: 34px;
+        height: 34px;
+      }
     }
 
     .sma-stage.is-swapped ~ .sma-aura-bar .sma-aura-icon,
@@ -672,7 +822,13 @@
       z-index: 10;
       display: flex;
       flex-direction: column;
-      gap: 26px;
+      gap: 18px;
+    }
+
+    @media (min-width: 640px) {
+      .sma-stack {
+        gap: 26px;
+      }
     }
 
     .sma-glass-navy {
@@ -683,11 +839,47 @@
       box-shadow:
         0 24px 52px -16px rgba(16, 44, 64, 0.30),
         inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
-      border-radius: 26px;
-      padding: 26px;
+      border-radius: 22px;
+      padding: 20px 18px;
       color: #F7FAFC;
       position: relative;
       overflow: hidden;
+    }
+
+    .sma-navy-top-row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    @media (min-width: 480px) {
+      .sma-navy-top-row {
+        flex-direction: row;
+        gap: 16px;
+      }
+    }
+
+    .sma-course-unit-pill {
+      padding: 4px 11px;
+      border-radius: 10px;
+      background: rgba(247, 250, 252, 0.12);
+      border: 1px solid rgba(247, 250, 252, 0.18);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: rgba(247, 250, 252, 0.90);
+      line-height: 1.35;
+    }
+
+    @media (min-width: 640px) {
+      .sma-course-unit-pill {
+        padding: 3px 12px;
+        border-radius: 9999px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+      }
     }
 
     .sma-glass-navy::before {
@@ -704,6 +896,7 @@
 
     @media (min-width: 640px) {
       .sma-glass-navy {
+        border-radius: 26px;
         padding: 34px 36px;
       }
     }
@@ -731,12 +924,13 @@
       box-shadow:
         inset 0 1px 1px 0 rgba(255, 255, 255, 0.98),
         0 20px 44px -16px rgba(16, 44, 64, 0.11);
-      border-radius: 26px;
-      padding: 26px;
+      border-radius: 22px;
+      padding: 20px 16px;
     }
 
     @media (min-width: 640px) {
       .sma-glass-panel {
+        border-radius: 26px;
         padding: 36px;
       }
     }
@@ -971,14 +1165,15 @@
       box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.98),
         0 20px 46px -14px rgba(234, 179, 8, 0.24);
-      border-radius: 26px;
-      padding: 26px;
+      border-radius: 22px;
+      padding: 20px 16px;
       position: relative;
       overflow: hidden;
     }
 
     @media (min-width: 640px) {
       .sma-gold-panel {
+        border-radius: 26px;
         padding: 36px;
       }
     }
@@ -1091,7 +1286,7 @@
     .sma-footer {
       position: relative;
       z-index: 10;
-      margin-top: 26px;
+      margin-top: 20px;
       background: rgba(255, 255, 255, 0.80);
       backdrop-filter: blur(22px) saturate(185%);
       -webkit-backdrop-filter: blur(22px) saturate(185%);
@@ -1099,18 +1294,32 @@
       box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.96),
         0 12px 28px -10px rgba(16, 44, 64, 0.10);
-      border-radius: 9999px;
-      padding: 14px 24px;
+      border-radius: 20px;
+      padding: 14px 16px;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
       justify-content: space-between;
-      gap: 8px;
-      font-size: 10px;
+      gap: 6px;
+      font-size: 9.5px;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: rgba(16, 44, 64, 0.74);
+    }
+
+    @media (min-width: 640px) {
+      .sma-footer {
+        margin-top: 26px;
+        border-radius: 9999px;
+        padding: 14px 24px;
+        flex-direction: row;
+        text-align: left;
+        gap: 8px;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+      }
     }
   </style>
 </head>
@@ -1229,23 +1438,23 @@
     <!-- Sorotan Kursus & Ringkasan Identiti -->
     <section class="sma-glass-navy">
       <div class="sma-navy-grid">
-        <div style="display:flex; align-items:flex-start; gap:16px;">
-          <div style="width:52px; height:52px; border-radius:16px; background:#DBFF00; color:#102C40; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+        <div class="sma-navy-top-row">
+          <div style="width:46px; height:46px; border-radius:14px; background:#DBFF00; color:#102C40; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
               <rect x="2" y="3" width="20" height="14" rx="2.5" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4M9.5 10l2 2 3.5-4" />
             </svg>
           </div>
-          <div>
-            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:8px;">
-              <span style="padding:3px 12px; border-radius:9999px; background:#DBFF00; color:#102C40; font-size:10px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase;">
+          <div style="min-width:0; flex:1;">
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin-bottom:8px;">
+              <span style="padding:3px 11px; border-radius:9999px; background:#DBFF00; color:#102C40; font-size:10px; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; white-space:nowrap;">
                 EDUP 6023
               </span>
-              <span style="padding:3px 12px; border-radius:9999px; background:rgba(247,250,252,0.12); border:1px solid rgba(247,250,252,0.18); font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(247,250,252,0.88);">
+              <span class="sma-course-unit-pill">
                 UNIT PENDIDIKAN ISLAM 3 &bull; PISMP 2026/2030
               </span>
             </div>
-            <h2 class="sma-font-display" style="margin:0; font-size:24px; font-weight:700; text-transform:uppercase; color:#F7FAFC; line-height:1.25;">
+            <h2 class="sma-font-display" style="margin:0; font-size:clamp(20px, 5vw, 24px); font-weight:700; text-transform:uppercase; color:#F7FAFC; line-height:1.25;">
               Teknologi Untuk Pengajaran dan Pembelajaran
             </h2>
           </div>
@@ -2157,72 +2366,106 @@
 
     function resizeStage() {
       const rect = stage.getBoundingClientRect();
+      W = Math.max(1, rect.width);
+      H = Math.max(1, rect.height);
       DPR = Math.min(window.devicePixelRatio || 1, 2);
-      W = Math.max(1, Math.floor(rect.width));
-      H = Math.max(1, Math.floor(rect.height));
 
-      [textBaseCanvas, textRevealCanvas, portraitCanvas, glowCanvas, maskCanvas, revealBufferCanvas].forEach(c => {
-        c.width = W * DPR;
-        c.height = H * DPR;
-        const cctx = c.getContext("2d");
+      [
+        textBaseCanvas,
+        textRevealCanvas,
+        portraitCanvas,
+        glowCanvas,
+        maskCanvas,
+        revealBufferCanvas
+      ].forEach((canvas) => {
+        canvas.width = Math.round(W * DPR);
+        canvas.height = Math.round(H * DPR);
+        const cctx = canvas.getContext("2d");
         cctx.setTransform(DPR, 0, 0, DPR, 0, 0);
       });
     }
 
     if (typeof ResizeObserver !== "undefined") {
       new ResizeObserver(resizeStage).observe(stage);
-    } else {
-      window.addEventListener("resize", resizeStage);
     }
+    window.addEventListener("resize", resizeStage, { passive: true });
     resizeStage();
 
-    // Pembantu melukis teks dengan jarak huruf elegan (Editorial Tracking)
-    function drawTrackedText(ctx, text, x, y, tracking) {
+    function drawTrackedText(ctx, text, centerX, y, tracking) {
       const chars = text.split("");
-      let totalWidth = 0;
-      chars.forEach((ch, i) => {
-        totalWidth += ctx.measureText(ch).width + (i < chars.length - 1 ? tracking : 0);
+      let totalW = 0;
+      chars.forEach((ch, idx) => {
+        totalW += ctx.measureText(ch).width + (idx < chars.length - 1 ? tracking : 0);
       });
-      let cursorX = x - totalWidth * 0.5;
+      let currX = centerX - totalW * 0.5;
+      ctx.save();
       ctx.textAlign = "left";
       chars.forEach((ch) => {
-        ctx.fillText(ch, cursorX, y);
-        cursorX += ctx.measureText(ch).width + tracking;
+        ctx.fillText(ch, currX, y);
+        currX += ctx.measureText(ch).width + tracking;
       });
+      ctx.restore();
     }
 
-    // Rekaan Tipografi Editorial Mewah di Belakang Potret
+    // Rekaan Tipografi Editorial Mewah di Belakang Potret (Responsif Auto-Fit Skrin Telefon & Desktop)
     function drawBehindName(ctx, isAlt) {
       ctx.clearRect(0, 0, W, H);
       ctx.save();
 
-      const mainSize = Math.max(38, Math.min(W * 0.090, H * 0.168, 118));
-      const subTopSize = Math.max(8.5, Math.min(W * 0.0105, 11));
-      const subBotSize = Math.max(9.5, Math.min(W * 0.0125, 13.5));
+      const isMobile = W < 540;
+      const maxTextWidth = W * (isMobile ? 0.93 : 0.90);
       const centerX = W * 0.5;
-      const centerY = H * 0.42;
+      const centerY = isMobile ? H * 0.44 : H * 0.42;
 
       ctx.textBaseline = "middle";
 
-      // 1. Kapsul Kicker Atas + Garis Hiasan Editorial Kiri & Kanan
+      // 1. Kapsul Kicker Atas + Garis Hiasan Editorial Kiri & Kanan (Auto-Fit Lebar Skrin)
       const topLabel = "UNIT PENDIDIKAN ISLAM 3  •  PISMP 2026/2030";
-      const topY = centerY - mainSize * 1.38;
+      let subTopSize = isMobile ? Math.max(6.8, W * 0.021) : Math.max(8.5, Math.min(W * 0.0105, 11));
+      let topTracking = isMobile ? Math.max(0.5, subTopSize * 0.12) : Math.max(1.5, subTopSize * 0.22);
       ctx.font = `800 ${subTopSize}px 'Montserrat', sans-serif`;
-      const topTracking = Math.max(1.5, subTopSize * 0.22);
-      const topTextW = ctx.measureText(topLabel).width + topTracking * (topLabel.length - 1);
-      const pillW = Math.min(W * 0.90, topTextW + 34);
-      const pillH = subTopSize * 2.35;
+
+      let topTextW = ctx.measureText(topLabel).width + topTracking * (topLabel.length - 1);
+      const maxPillInnerW = maxTextWidth - (isMobile ? 20 : 34);
+      if (topTextW > maxPillInnerW && topTextW > 0) {
+        const ratio = maxPillInnerW / topTextW;
+        subTopSize *= ratio;
+        topTracking *= ratio;
+        ctx.font = `800 ${subTopSize}px 'Montserrat', sans-serif`;
+        topTextW = ctx.measureText(topLabel).width + topTracking * (topLabel.length - 1);
+      }
+
+      // 2. Tipografi Utama Gergasi Berdimensi (Auto-Fit supaya tidak terpotong di telefon)
+      const line1 = "SHEIKH MUHAMMAD";
+      const line2 = "ARIF";
+      let mainSize = isMobile
+        ? Math.min(W * 0.125, H * 0.135, 56)
+        : Math.max(42, Math.min(W * 0.090, H * 0.168, 118));
+      let mainTracking = Math.max(0.6, mainSize * 0.024);
+      ctx.font = `700 ${mainSize}px 'Oswald', sans-serif`;
+
+      const rawLine1W = ctx.measureText(line1).width + mainTracking * (line1.length - 1);
+      if (rawLine1W > maxTextWidth && rawLine1W > 0) {
+        const ratio = maxTextWidth / rawLine1W;
+        mainSize *= ratio;
+        mainTracking *= ratio;
+        ctx.font = `700 ${mainSize}px 'Oswald', sans-serif`;
+      }
+
+      const topY = centerY - mainSize * (isMobile ? 1.48 : 1.38);
+      const pillW = Math.min(maxTextWidth, topTextW + (isMobile ? 20 : 34));
+      const pillH = Math.max(18, subTopSize * 2.4);
 
       // Garis pengapit kiri & kanan kapsul atas
-      const wingLen = Math.max(0, Math.min(70, (W * 0.78 - pillW) * 0.5));
-      if (wingLen > 12) {
+      const wingLen = Math.max(0, Math.min(70, (W * 0.84 - pillW) * 0.5));
+      if (wingLen > 10) {
         ctx.strokeStyle = isAlt ? "rgba(16, 44, 64, 0.38)" : "rgba(16, 44, 64, 0.18)";
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(centerX - pillW * 0.5 - 10, topY);
-        ctx.lineTo(centerX - pillW * 0.5 - 10 - wingLen, topY);
-        ctx.moveTo(centerX + pillW * 0.5 + 10, topY);
-        ctx.lineTo(centerX + pillW * 0.5 + 10 + wingLen, topY);
+        ctx.moveTo(centerX - pillW * 0.5 - 8, topY);
+        ctx.lineTo(centerX - pillW * 0.5 - 8 - wingLen, topY);
+        ctx.moveTo(centerX + pillW * 0.5 + 8, topY);
+        ctx.lineTo(centerX + pillW * 0.5 + 8 + wingLen, topY);
         ctx.stroke();
       }
 
@@ -2239,22 +2482,20 @@
       ctx.lineWidth = 1;
       ctx.stroke();
 
+      ctx.font = `800 ${subTopSize}px 'Montserrat', sans-serif`;
       ctx.fillStyle = isAlt ? "#DBFF00" : "#102C40";
       drawTrackedText(ctx, topLabel, centerX, topY + 0.5, topTracking);
 
-      // 2. Tipografi Utama Gergasi Berdimensi (SHEIKH MUHAMMAD / ARIF)
+      // Lukis Nama Utama 2 Baris
       ctx.font = `700 ${mainSize}px 'Oswald', sans-serif`;
-      const line1 = "SHEIKH MUHAMMAD";
-      const line2 = "ARIF";
       const y1 = centerY - mainSize * 0.46;
       const y2 = centerY + mainSize * 0.50;
-      const mainTracking = Math.max(1, mainSize * 0.025);
 
       // Bayang Seni Bina Halus (Echo Outline) untuk Kedalaman Visual
       ctx.save();
-      ctx.lineWidth = 1.2;
+      ctx.lineWidth = isMobile ? 0.9 : 1.2;
       ctx.strokeStyle = isAlt ? "rgba(16, 44, 64, 0.22)" : "rgba(16, 44, 64, 0.12)";
-      const echoOffset = Math.max(4, mainSize * 0.055);
+      const echoOffset = Math.max(2.5, mainSize * 0.055);
       const drawTrackedStroke = (txt, x, y, trk) => {
         const chars = txt.split("");
         let tw = 0;
@@ -2271,7 +2512,6 @@
       ctx.restore();
 
       if (!isAlt) {
-        // Lapisan 01: Gradien Navy Diraja Berdimensi + Bayang Lembut
         const navyGrad = ctx.createLinearGradient(0, y1 - mainSize * 0.5, 0, y2 + mainSize * 0.5);
         navyGrad.addColorStop(0, "#081826");
         navyGrad.addColorStop(0.52, "#102C40");
@@ -2279,14 +2519,13 @@
 
         ctx.save();
         ctx.shadowColor = "rgba(16, 44, 64, 0.18)";
-        ctx.shadowBlur = 22;
-        ctx.shadowOffsetY = 10;
+        ctx.shadowBlur = isMobile ? 14 : 22;
+        ctx.shadowOffsetY = isMobile ? 6 : 10;
         ctx.fillStyle = navyGrad;
         drawTrackedText(ctx, line1, centerX, y1, mainTracking);
         drawTrackedText(ctx, line2, centerX, y2, mainTracking);
         ctx.restore();
       } else {
-        // Lapisan 02 (Aura): Gradien Lime Neon Bercahaya + Garis Luar Navy Tajam
         const limeGrad = ctx.createLinearGradient(0, y1 - mainSize * 0.5, 0, y2 + mainSize * 0.5);
         limeGrad.addColorStop(0, "#E9FF59");
         limeGrad.addColorStop(0.55, "#DBFF00");
@@ -2294,14 +2533,14 @@
 
         ctx.save();
         ctx.shadowColor = "rgba(219, 255, 0, 0.55)";
-        ctx.shadowBlur = 26;
+        ctx.shadowBlur = isMobile ? 16 : 26;
         ctx.fillStyle = limeGrad;
         drawTrackedText(ctx, line1, centerX, y1, mainTracking);
         drawTrackedText(ctx, line2, centerX, y2, mainTracking);
         ctx.restore();
 
         ctx.save();
-        ctx.lineWidth = Math.max(2, mainSize * 0.028);
+        ctx.lineWidth = Math.max(1.4, mainSize * 0.028);
         ctx.lineJoin = "round";
         ctx.strokeStyle = "#102C40";
         drawTrackedStroke(line1, centerX, y1, mainTracking);
@@ -2309,19 +2548,29 @@
         ctx.restore();
       }
 
-      // 3. Tandatangan Bawah Berjarak Luas + Ornamen Berlian (◆ BIN SHEIKH ZAINAL ABIDIN ◆)
+      // 3. Tandatangan Bawah Berjarak Luas + Ornamen Berlian (Auto-Fit Skrin Telefon)
       const botLabel = "BIN SHEIKH ZAINAL ABIDIN";
-      const botY = centerY + mainSize * 1.28;
+      const botY = centerY + mainSize * (isMobile ? 1.32 : 1.28);
+      let subBotSize = isMobile ? Math.max(7.2, W * 0.023) : Math.max(9.5, Math.min(W * 0.0125, 13.5));
+      let botTracking = isMobile ? Math.max(1.0, subBotSize * 0.18) : Math.max(2.5, subBotSize * 0.34);
       ctx.font = `800 ${subBotSize}px 'Montserrat', sans-serif`;
-      const botTracking = Math.max(2.5, subBotSize * 0.34);
-      const botTextW = ctx.measureText(botLabel).width + botTracking * (botLabel.length - 1);
+
+      let botTextW = ctx.measureText(botLabel).width + botTracking * (botLabel.length - 1);
+      const maxBotW = maxTextWidth - 28;
+      if (botTextW > maxBotW && botTextW > 0) {
+        const ratio = maxBotW / botTextW;
+        subBotSize *= ratio;
+        botTracking *= ratio;
+        ctx.font = `800 ${subBotSize}px 'Montserrat', sans-serif`;
+        botTextW = ctx.measureText(botLabel).width + botTracking * (botLabel.length - 1);
+      }
 
       ctx.fillStyle = isAlt ? "#102C40" : "rgba(16, 44, 64, 0.84)";
       drawTrackedText(ctx, botLabel, centerX, botY, botTracking);
 
       // Ornamen berlian kecil di kiri dan kanan nama ayah
-      const diamondOffset = botTextW * 0.5 + 16;
-      const dSize = 4;
+      const diamondOffset = botTextW * 0.5 + (isMobile ? 10 : 16);
+      const dSize = isMobile ? 3.2 : 4;
       [centerX - diamondOffset, centerX + diamondOffset].forEach((dx) => {
         ctx.save();
         ctx.translate(dx, botY);
@@ -2353,6 +2602,7 @@
       if (trail.length < 2) return false;
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
+      const widthScale = Math.max(0.56, Math.min(1, W / 560));
 
       for (let i = 1; i < trail.length; i++) {
         const p0 = trail[i - 1];
@@ -2362,7 +2612,7 @@
 
         const life = 1 - age;
         const taper = Math.sin((i / trail.length) * Math.PI);
-        const width = Math.max(22, (56 + p1.speed * 1.25) * life * (0.5 + 0.65 * taper));
+        const width = Math.max(16, (56 + p1.speed * 1.25) * widthScale * life * (0.5 + 0.65 * taper));
 
         const midX = (p0.x + p1.x) * 0.5;
         const midY = (p0.y + p1.y) * 0.5;
@@ -2476,6 +2726,10 @@
     }
 
     function animateLiquid(now) {
+      if (W <= 1 || H <= 1) {
+        resizeStage();
+      }
+
       while (trail.length > 0 && now - trail[0].time > TRAIL_LIFE) {
         trail.shift();
       }
